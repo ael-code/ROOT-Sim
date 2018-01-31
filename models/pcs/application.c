@@ -208,6 +208,7 @@ void ProcessEvent(unsigned int me, simtime_t now, int event_type, event_content_
 			new_event_content.from = me;
 			new_event_content.dummy = &(state->dummy);
 			ScheduleNewEvent(event_content->cell, now+0.000001, HANDOFF_RECV, &new_event_content, sizeof(new_event_content));
+			ScheduleNewEvent(event_content->cell, now+0.003, BIG_MSG, malloc(BIG_MSG_SIZE), BIG_MSG_SIZE);
 			break;
 
 		case HANDOFF_RECV:
@@ -254,9 +255,11 @@ void ProcessEvent(unsigned int me, simtime_t now, int event_type, event_content_
 
 
 			break;
+		
+		case BIG_MSG:
+			break;
 
-
-				case FADING_RECHECK:
+		case FADING_RECHECK:
 
 /*
 			if(state->check_fading)

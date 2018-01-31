@@ -34,6 +34,10 @@
 #define HANDOFF_RECV	31
 #define FADING_RECHECK	40
 
+#define BIG_MSG 41
+#define BIG_MSG_SIZE 4112
+
+
 #define FADING_RECHECK_FREQUENCY	300	// Every 5 Minutes
 
 #define MSK 0x1
